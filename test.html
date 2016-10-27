@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="gridlines.css" type="text/css" />
+</head>
+<body>
+<p>The <em>Spotify Web API</em> is a powerful tool that allows you to access and make changes to songs, albums, playlists, and other data objects stored in Spotify’s database. The best part is, it’s <strong>completely free!</strong></p>
+<p>In this tutorial, you will learn:</p>
+<ul>
+<li>How to install the API in Eclipse</li>
+<li>How to register your application</li>
+</ul>
+<h2 id="install-the-api">Install the API</h2>
+<p>To use the Spotify Web API, We’ll need a 3rd party library to help our application communicate with Spotify’s servers. Luckily for us, Spotify has provided us with one <a href="https://github.com/thelinmichael/spotify-web-api-java">Here</a>. However, since the API library depends on other 3rd party libraries that we don’t have, we must install it as a Maven dependency.</p>
+<h4 id="installing-the-maven-dependency">Installing the Maven Dependency</h4>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="79%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Step</th>
+<th align="left">Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>Convert project</p></td>
+<td align="left"><p>First, right click on your java project and select <code>configure -&gt; convert to maven project</code></p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Open dependency dialog</p></td>
+<td align="left"><p>Left click on the folder again and select <code>maven -&gt; add dependency</code> A dialog box should prompt you for a <strong>group id</strong>, an <strong>artifact id</strong>, and a <strong>version</strong>.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Find dependency info</p></td>
+<td align="left"><p>Find the latest version of the library <a href="https://oss.sonatype.org/#nexus-search;quick~spotify-web-api-java.">here</a>. Select the file spotify-web-api-<em>version</em>.jar and copy the information into the dialog box in Eclipse</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Confirm</p></td>
+<td align="left"><p>Click “Ok.” The library binaries should appear in your project under <strong>Maven Dependencies</strong></p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="register-your-application">Register your application</h2>
+<p>In order to get faster request speeds or access any user-specific data, you will have to <strong>register</strong> your application with <a href="https://developer.spotify.com/my-applications/#!/applications">Spotify’s Developer Page</a>. You’ll need a spotify account (both free and premium accounts will work)</p>
+<p>After creating an account, go to the <em>My Applications</em> page and select <strong>“Create an App”</strong>. After submitting a name and description for your application, you will be provided with a <strong>Client ID</strong> and a <strong>Secret ID</strong>. Store these keys somewhere safe, you will need them for the <a href="https://developer.spotify.com/web-api/authorization-guide/#authorization-code-flow">Authorization Code Flow</a>.</p>
+<p><img src="https://dylanjtastet.github.io/assets/images/keys.png" alt="Create an App" /> <img src="https://dylanjtastet.github.io/assets/images/appcreate.png" alt="Save your Keys" /></p>
+<p>Set a <strong>Redirect URI</strong> if you plan on authenticating users. The link does not have to work, but the user sign-in page has to redirect to somewhere or it will cause an error.</p>
+<h2 id="all-done">All Done!</h2>
+<p>You are now all set to start programming with the Spotify Web API! For documentation on how to use the API, check out the <a href="https://github.com/thelinmichael/spotify-web-api-java/#usage">readme</a>.</p>
+</body>
+</html>
